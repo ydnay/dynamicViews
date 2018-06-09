@@ -15,6 +15,11 @@ app.get('/', (req, res, next) => {
   res.render('index');
 });
 
+app.get('/about', (req, res, next) => {
+  // send views/index.hbs for displaying in the browser
+  res.render('second');
+});
+
 // app.js
 
 app.get('/', (req, res, next) => {
@@ -24,6 +29,15 @@ app.get('/', (req, res, next) => {
   };
 
   res.render('index', data);
+});
+
+app.get('/about', (req, res, next) => {
+  let data = {
+    name: "Ironhacker",
+    bootcamp: "IronHack WebDev"
+  };
+
+  res.render('second', data);
 });
 
 // Server Started
